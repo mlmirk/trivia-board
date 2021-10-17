@@ -59,7 +59,7 @@ catagoryNum= parseInt(temp.slice(0))
 questionNum= parseInt(temp.slice(-1))
 console.log(questionNum)
 // cells.setAttribute('hidden')
-
+evt.target.style.visibility = 'hidden'
 
 render()
 }

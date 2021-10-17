@@ -42,7 +42,7 @@ section.board {
   grid-template-columns: repeat(6, 5vmin);
   grid-gap: 1vmin;
 }
-div {
+.cell {
   
   border:  8px solid black;
   font-size: 15vmin;
