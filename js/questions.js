@@ -54,11 +54,11 @@ const Question0=[
 
 
   const Question1=[
-    { question:'',
-      rightAnswer:'',
-      wrongAnswer1:'',
-      wrongAnswer2:'',
-      wrongAnswer3:'',
+    { question:'1',
+      rightAnswer:'2',
+      wrongAnswer1:'3',
+      wrongAnswer2:'e',
+      wrongAnswer3:'r',
       isActive:true, 
   
     },
@@ -322,3 +322,24 @@ const Question0=[
       
         }]
       
+
+// this function takes in the catagory number and the question number and return the object within the array
+function getQuestionsAndAnswers(cat,qNumber){
+  if(cat === 0){
+    return Question0[qNumber]
+  }else if(cat === 1){
+    return console.log(Question1[qNumber])
+  }else if(cat === 2){
+    return Question2[qNumber]
+  }else if(cat === 3){
+    return Question3[qNumber]
+  }else if(cat === 4){
+    return Question4[qNumber]
+  }else if(cat === 5){
+    return Question5[qNumber]
+  }
+
+}
+export{
+  getQuestionsAndAnswers
+}
