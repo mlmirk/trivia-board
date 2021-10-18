@@ -19,14 +19,14 @@ const cells = document.querySelectorAll(".cell")
 const playerMessage= document.querySelector("#message")
 const player1ScoreMessage=document.querySelector("#player1")
 const player2ScoreMessage=document.querySelector("#player2")
+const questionModal= document.getElementById("questionsModal")
 
-
-//console.log(player2ScoreMessage)
+console.log(questionModal)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 cells.forEach(cell=> cell.addEventListener('click',handleClick))
-
+questionModal.addEventListener('show.bs.modal',modalEditor)
 
 
 
@@ -64,6 +64,30 @@ evt.target.style.visibility = 'hidden'
 render()
 }
 
+function questionTimer(){
+//thirty second timer 
+let timeLeft= 30
+let timer = setInterval(function() {
+	// Each time the function is called, decrease the remaining time by 1
+	timeLeft -= 1
+	console.log(timeLeft)
+  if(timeLeft === 0){
+    clearInterval(timer)
+  }
+}, 1000)
+
+}
+
+function modalEditor(){
+let modalTitle= questionModal.querySelector('#modal-title')
+
+modalTitle.textContent= 'this Worksss?!'
+
+
+}
+
+
+
 
 init()
-
+//questionTimer()

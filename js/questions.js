@@ -1,9 +1,9 @@
 const Question0=[
-  { question:'',
-    rightAnswer:'',
-    wrongAnswer1:'',
-    wrongAnswer2:'',
-    wrongAnswer3:'',
+  { question:'2+2 is equal to? ',
+    rightAnswer:'2',
+    wrongAnswer1:'22',
+    wrongAnswer2:'3',
+    wrongAnswer3:'quick maths',
     isActive:true, 
 
   },
