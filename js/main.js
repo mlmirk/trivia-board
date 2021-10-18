@@ -57,6 +57,7 @@ console.log(evt.target.id)
 catagoryNum= parseInt(evt.target.id.slice(0))
 questionNum= parseInt(evt.target.id.slice(-1))
 questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
+modalEditor()
 //console.log(questionNum)
 // cells.setAttribute('hidden')
 evt.target.style.visibility = 'hidden'
@@ -67,8 +68,6 @@ questionTimer()
 render()
 }
 function questionTimer(){
-//thirty second timer 
-
 let timer = setInterval(function() {
 	// Each time the function is called, decrease the remaining time by 1
 	timeLeft -= 1
@@ -83,12 +82,14 @@ timeLeft=30
 function modalEditor(evt){
 let modalTitle= questionModal.querySelector('.modal-title')
 let selectQuestion= questionModal.querySelector('#question-text')
-let answer1= questionModal.querySelector('label[for="A1"]')
-let answer2= questionModal.querySelector('label[for="A2"]')
-let answer3= questionModal.querySelector('label[for="A3"]')
-let answer4= questionModal.querySelector('label[for="A4"]')
-let timerQ= questionModal.querySelector('#timer')
+let answer1Display= questionModal.querySelector('label[for="A1"]')
+let answer2Display= questionModal.querySelector('label[for="A2"]')
+let answer3Display= questionModal.querySelector('label[for="A3"]')
+let answer4Display= questionModal.querySelector('label[for="A4"]')
 
+let answer1= questionModal.querySelector('#A1')
+let timerQ= questionModal.querySelector('#timer')
+console.log(answer1)
 timerQ.textContent= `time remaining ${timeLeft}` // not truly showing countdown 
 selectQuestion.textContent= `${questionObject.question}`
 

@@ -328,7 +328,7 @@ function getQuestionsAndAnswers(cat,qNumber){
   if(cat === 0){
     return Question0[qNumber]
   }else if(cat === 1){
-    return console.log(Question1[qNumber])
+    return Question1[qNumber]
   }else if(cat === 2){
     return Question2[qNumber]
   }else if(cat === 3){
