@@ -3,29 +3,31 @@ import{getQuestionsAndAnswers} from "./questions.js"
 
 /*---------------------------- Variables (state) ----------------------------*/
 let playerTurn
-let winner
+let winner //may not need
 let player1Score
 let player2Score
-let catagoryNum
-let questionNum
-let questionCorrect
-let questionActive
-let timeLeft
-let questionObject
-let questionDisplay
+let catagoryNum //to be passed to retrevail function
+let questionNum //to be passed to retrevail function
+let questionCorrect // value to track if question is right/wrong
+let questionActive // for the timer to use to play the time
+let timeLeft // global timer 
+let questionObject //store the question object 
+let questionDisplay // tbd
+let randomizer // want a vavaible to randomly assign questions and answers
 /*------------------------ Cached Element References ------------------------*/
 const cells = document.querySelectorAll(".cell")
 const playerMessage= document.querySelector("#message")
 const player1ScoreMessage=document.querySelector("#player1")
 const player2ScoreMessage=document.querySelector("#player2")
 const questionModal= document.getElementById("questionsModal")
+const submitBtn= document.getElementById("submit")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 cells.forEach(cell=> cell.addEventListener('click',handleClick))
 questionModal.addEventListener('show.bs.modal',modalEditor)
-
+submitBtn.addEventListener('click', checkGuess)
 
 
 
@@ -64,7 +66,7 @@ evt.target.style.visibility = 'hidden'
 //questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
 questionTimer()
 
-
+console.log(questionObject[2])
 render()
 }
 function questionTimer(){
@@ -91,7 +93,17 @@ let answer1= questionModal.querySelector('#A1')
 let timerQ= questionModal.querySelector('#timer')
 console.log(answer1)
 timerQ.textContent= `time remaining ${timeLeft}` // not truly showing countdown 
-selectQuestion.textContent= `${questionObject.question}`
+selectQuestion.textContent = `${questionObject.question}`
+
+//want to randomize this
+answer1Display.textContent = `${questionObject.rightAnswer}`
+answer2Display.textContent = `${questionObject.wrongAnswer1}`
+answer3Display.textContent = `${questionObject.wrongAnswer2}`
+answer4Display.textContent = `${questionObject.wrongAnswer3}`
+
+
+
+
 
 
 
@@ -105,8 +117,9 @@ selectQuestion.textContent= `${questionObject.question}`
 // answer3.textContent='798'
 // answer4.textContent='564'
 }
-function objectHandler(){
-
+function checkGuess(evt){
+let check0=
+let
 
 }
 
