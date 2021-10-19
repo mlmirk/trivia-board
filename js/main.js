@@ -41,7 +41,7 @@ winner= null
 questionActive= false
 timeLeft=30
 questionObject={}
-
+questionCorrect=null
 render()
 }
 
@@ -66,7 +66,7 @@ evt.target.style.visibility = 'hidden'
 //questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
 questionTimer()
 
-console.log(questionObject[2])
+
 render()
 }
 function questionTimer(){
@@ -89,19 +89,27 @@ let answer2Display= questionModal.querySelector('label[for="A2"]')
 let answer3Display= questionModal.querySelector('label[for="A3"]')
 let answer4Display= questionModal.querySelector('label[for="A4"]')
 
+
 let answer1= questionModal.querySelector('#A1')
+let answer2= questionModal.querySelector('#A2')
+let answer3= questionModal.querySelector('#A3')
+let answer4= questionModal.querySelector('#A4')
 let timerQ= questionModal.querySelector('#timer')
 console.log(answer1)
 timerQ.textContent= `time remaining ${timeLeft}` // not truly showing countdown 
 selectQuestion.textContent = `${questionObject.question}`
 
 //want to randomize this
-answer1Display.textContent = `${questionObject.rightAnswer}`
+answer1Display.textContent= `${questionObject.rightAnswer}`
+answer1.setAttribute("value", `${questionObject.rightAnswer}` )
 answer2Display.textContent = `${questionObject.wrongAnswer1}`
+answer2.setAttribute("value", `${questionObject.rightAnswer}` )
 answer3Display.textContent = `${questionObject.wrongAnswer2}`
+answer3.setAttribute("value", `${questionObject.rightAnswer}` )
 answer4Display.textContent = `${questionObject.wrongAnswer3}`
+answer4.setAttribute("value", `${questionObject.rightAnswer}` )
 
-
+console.log(answer1Display)
 
 
 
@@ -118,9 +126,24 @@ answer4Display.textContent = `${questionObject.wrongAnswer3}`
 // answer4.textContent='564'
 }
 function checkGuess(evt){
-let check0=
-let
+let check1= document.getElementById("A1")
+let check2= document.getElementById("A2")
+let check3= document.getElementById("A3")
+let check4= document.getElementById("A4")
+questionCorrect=false
+if(check1.checked=== true){
+  (check1.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
+}else if(check2.checked=== true){
 
+}else if(check3.checked=== true){
+
+}else if(check4.checked=== true){
+
+}
+
+
+if(questionCorrect){console.log('yay')}
+console.log(questionCorrect," + ", questionObject.rightAnswer," + ",check1.value)
 }
 
 
