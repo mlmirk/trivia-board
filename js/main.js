@@ -14,6 +14,8 @@ let timeLeft // global timer
 let questionObject //store the question object 
 let questionDisplay // tbd
 let randomizer // want a vavaible to randomly assign questions and answers
+let temp
+let points
 /*------------------------ Cached Element References ------------------------*/
 const cells = document.querySelectorAll(".cell")
 const playerMessage= document.querySelector("#message")
@@ -42,11 +44,14 @@ questionActive= false
 timeLeft=30
 questionObject={}
 questionCorrect=null
+temp=null
+points=null
 render()
 }
 
 function render(){
 playerMessage.innerHTML= playerTurn >0 ? "It is player 1's turn":"It is player 2's turn"
+
 player1ScoreMessage.innerHTML= `Player 1 Score: ${player1Score}`
 player2ScoreMessage.innerHTML= `Player 2 Score: ${player2Score}`
 
@@ -54,8 +59,8 @@ player2ScoreMessage.innerHTML= `Player 2 Score: ${player2Score}`
 
 function handleClick(evt){
 
-playerTurn= playerTurn * -1
-console.log(evt.target.id)
+
+temp=evt.target.id
 catagoryNum= parseInt(evt.target.id.slice(0))
 questionNum= parseInt(evt.target.id.slice(-1))
 questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
@@ -69,17 +74,7 @@ questionTimer()
 
 render()
 }
-function questionTimer(){
-let timer = setInterval(function() {
-	// Each time the function is called, decrease the remaining time by 1
-	timeLeft -= 1
-	let x=timeLeft
-  if(timeLeft === 0){
-    clearInterval(timer)
-  }
-}, 1000)
-timeLeft=30
-}
+
 
 function modalEditor(evt){
 let modalTitle= questionModal.querySelector('.modal-title')
@@ -95,7 +90,7 @@ let answer2= questionModal.querySelector('#A2')
 let answer3= questionModal.querySelector('#A3')
 let answer4= questionModal.querySelector('#A4')
 let timerQ= questionModal.querySelector('#timer')
-console.log(answer1)
+//console.log(answer1)
 timerQ.textContent= `time remaining ${timeLeft}` // not truly showing countdown 
 selectQuestion.textContent = `${questionObject.question}`
 
@@ -103,13 +98,13 @@ selectQuestion.textContent = `${questionObject.question}`
 answer1Display.textContent= `${questionObject.rightAnswer}`
 answer1.setAttribute("value", `${questionObject.rightAnswer}` )
 answer2Display.textContent = `${questionObject.wrongAnswer1}`
-answer2.setAttribute("value", `${questionObject.rightAnswer}` )
+answer2.setAttribute("value", `${questionObject.wrongAnswer1}` )
 answer3Display.textContent = `${questionObject.wrongAnswer2}`
-answer3.setAttribute("value", `${questionObject.rightAnswer}` )
+answer3.setAttribute("value", `${questionObject.wrongAnswer2}` )
 answer4Display.textContent = `${questionObject.wrongAnswer3}`
-answer4.setAttribute("value", `${questionObject.rightAnswer}` )
+answer4.setAttribute("value", `${questionObject.wrongAnswer3}` )
 
-console.log(answer1Display)
+//console.log(answer1Display)
 
 
 
@@ -130,22 +125,56 @@ let check1= document.getElementById("A1")
 let check2= document.getElementById("A2")
 let check3= document.getElementById("A3")
 let check4= document.getElementById("A4")
+
 questionCorrect=false
 if(check1.checked=== true){
   (check1.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
 }else if(check2.checked=== true){
-
+  (check2.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
 }else if(check3.checked=== true){
-
+  (check3.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
 }else if(check4.checked=== true){
-
+  (check4.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
 }
 
-
-if(questionCorrect){console.log('yay')}
-console.log(questionCorrect," + ", questionObject.rightAnswer," + ",check1.value)
+setScore(questionCorrect)
+//console.log(questionCorrect, 'this is the valueof the radioButton', check2.value)
+// console.log('this is correct answer: ', questionObject.rightAnswer)
+//if(questionCorrect){console.log('yay')}
+//console.log(questionCorrect," + ", questionObject.rightAnswer," + ",check1.value)
 }
 
+function setScore(x){
+  if(document.getElementById(`${temp}`).classList.contains("easy") && x===true){
+    points=100
+  }else if(document.getElementById(`${temp}`).classList.contains("med") && x===true){
+    points=200
+  }else if(document.getElementById(`${temp}`).classList.contains("hard") && x===true){
+    points=300
+  }else
+    points=0
+
+  if(playerTurn===1){
+    player1Score+=points
+  }
+  if(playerTurn===-1){
+    player2Score+=points
+  }
+  playerTurn= playerTurn * -1
+render()
+}
+
+function questionTimer(){
+  let timer = setInterval(function() {
+    // Each time the function is called, decrease the remaining time by 1
+    timeLeft -= 1
+    let x=timeLeft
+    if(timeLeft === 0){
+      clearInterval(timer)
+    }
+  }, 1000)
+  timeLeft=30
+  }
 
 
 init()
