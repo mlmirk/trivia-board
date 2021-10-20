@@ -1,10 +1,7 @@
 const Question0=[
-  { question:'2+2 is equal to? ',
-    rightAnswer:'2',
-    wrongAnswer1:'22',
-    wrongAnswer2:'3',
-    wrongAnswer3:'quick maths',
-    isActive:true, 
+  { question:'What is the main ingredient used to make hummus',
+    rightAnswer:'Chickpeas',
+    answers:["Tahini","Humms","Chickpeas","Navy Beans"],
 
   },
   {question:'',
@@ -12,6 +9,7 @@ const Question0=[
   wrongAnswer1:'',
   wrongAnswer2:'',
   wrongAnswer3:'',
+  answers:[5,6,7,8],
   isActive:true, 
 
 
@@ -326,6 +324,7 @@ const Question0=[
 // this function takes in the catagory number and the question number and return the object within the array
 function getQuestionsAndAnswers(cat,qNumber){
   if(cat === 0){
+    shuffle(Question0[qNumber].answers)
     return Question0[qNumber]
   }else if(cat === 1){
     return Question1[qNumber]
@@ -338,6 +337,13 @@ function getQuestionsAndAnswers(cat,qNumber){
   }else if(cat === 5){
     return Question5[qNumber]
   }
+
+  function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+    //console.log(array)
+  }
+
+//shuffle(Question0.answers)
 
 }
 export{

@@ -122,19 +122,23 @@ let answer1= questionModal.querySelector('#A1')
 let answer2= questionModal.querySelector('#A2')
 let answer3= questionModal.querySelector('#A3')
 let answer4= questionModal.querySelector('#A4')
-
+const arr=questionObject.answers[0]
 
 
 //want to randomize this
 selectQuestion.textContent = `${questionObject.question}`
-answer1Display.textContent= `${questionObject.rightAnswer}`
-answer1.setAttribute("value", `${questionObject.rightAnswer}` )
-answer2Display.textContent = `${questionObject.wrongAnswer1}`
-answer2.setAttribute("value", `${questionObject.wrongAnswer1}` )
-answer3Display.textContent = `${questionObject.wrongAnswer2}`
-answer3.setAttribute("value", `${questionObject.wrongAnswer2}` )
-answer4Display.textContent = `${questionObject.wrongAnswer3}`
-answer4.setAttribute("value", `${questionObject.wrongAnswer3}` )
+answer1Display.textContent= `${questionObject.answers[0]}`
+answer1.setAttribute("value", `${questionObject.answers[0]}` )
+answer2Display.textContent = `${questionObject.answers[1]}`
+answer2.setAttribute("value", `${questionObject.answers[1]}` )
+answer3Display.textContent = `${questionObject.answers[2]}`
+answer3.setAttribute("value", `${questionObject.answers[2]}` )
+answer4Display.textContent = `${questionObject.answers[3]}`
+answer4.setAttribute("value", `${questionObject.answers[3]}` )
+
+console.log(arr)
+
+
 }
 
 
@@ -174,9 +178,9 @@ function setScore(x){
   if(document.getElementById(`${temp}`).classList.contains("easy") && x===true){
     points=100
   }else if(document.getElementById(`${temp}`).classList.contains("med") && x===true){
-    points=200
-  }else if(document.getElementById(`${temp}`).classList.contains("hard") && x===true){
     points=300
+  }else if(document.getElementById(`${temp}`).classList.contains("hard") && x===true){
+    points=500
   }else
     points=0
 

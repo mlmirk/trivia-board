@@ -13,10 +13,12 @@
 	<title>Trivia</title>
 </head>
 <body>
+	<div class="userFeedback">
 	<h1 id="banner">Trivia Duos!!!</h1>
 	<h2 id="message">Message</h2>
 	<h3 id="player1">Player 1 Score:</h3>
 	<h3 id="player2">Player 2 Score:</h3>
+</div>
 	<section class="board">
 		<div id="0sq0" class="cell easy" data-bs-toggle="modal" data-bs-target="#questionsModal" ></div>
 		<div id="0sq1" class="cell easy" data-bs-toggle="modal" data-bs-target="#questionsModal"></div>
@@ -56,14 +58,35 @@
     <div id="5sq5" class="cell easy"  data-bs-toggle="modal" data-bs-target="#questionsModal"></div>
 	</section>   
 
-	<button class="game-reset btn btn-info" >Replay</button>
-	<button class="game-end btn btn-danger" >END GAME</button>
+
 <div id="gameRules" class="rules">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nam temporibus blanditiis quaerat, obcaecati tempora consectetur, sit voluptas voluptates, veritatis repellat. Iste numquam aperiam quae dolore pariatur ipsa fugiat in!
+<p>
+	<ul class="faq"><h3>Rules and FAQ</h3>
+		<li>Click a box to start he game</li>
+		<li>A popup will appear and you have 15 seconds to <br>
+		answer the question it will automatically submit the<br>
+		the selected radio button
+		</li>
+		<li>Each row is its own category but they are hidden</li>
+		<li>Points are as follows:
+			<br> <span style="color: rgb(3, 118, 3);">Green are easy and worth 100 points</span> 
+			<br> <span style="color: yellow">Yellow are medium difficulty and worth 300 points</span>
+			<br > <span style="color: red;">Red are the Hardest and worth 500 points</span>
+		</li>
+		<li>Replay Button will clear the score and reset the board</li>
+		<li>End game button will end the game on the click and declare <br>a winner at that point</li>
+		
+
+	</ul>
+</p>
 </div>
 
-	
-	
+<div class="gameButtons">
+	<button class="game-reset btn btn-info" >Replay</button>
+	<button class="game-end btn btn-danger" >END GAME</button>
+
+</div>
+
 
 
 
