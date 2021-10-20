@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 import{getQuestionsAndAnswers} from "./questions.js"
-
+const audio= new Audio('../audio/HumanMusic.mp3')
 /*---------------------------- Variables (state) ----------------------------*/
 let playerTurn
 let winner //may not need
@@ -86,6 +86,7 @@ function countdown() {
   if (timeLeft == -1) {
     timeExpired();
   } else {
+    audio.play()
     timerQ.textContent= `time remaining ${timeLeft}`
       timeLeft--;
   }
@@ -94,7 +95,7 @@ function countdown() {
 function timeExpired() {
   checkGuess()
   bootstrap.Modal.getInstance(questionModal).hide()
-
+  audio.pause()
 
   clearTimeout(timerId);
 }
@@ -163,6 +164,7 @@ if(check1.checked=== true){
 
 setScore(questionCorrect)
 clearTimeout(timerId)
+audio.pause()
 //console.log(questionCorrect, 'this is the valueof the radioButton', check2.value)
 // console.log('this is correct answer: ', questionObject.rightAnswer)
 //if(questionCorrect){console.log('yay')}
