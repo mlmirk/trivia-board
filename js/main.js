@@ -27,7 +27,8 @@ const timerQ= document.querySelector('#timerX')
 const resetBtn=document.querySelector('.game-reset')
 const quitBtn=document.querySelector('.game-end')
 const bannerMessage=document.getElementById("banner")
-
+const lightDarkBtn = document.getElementById("light-dark-button")
+const body = document.querySelector("body")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -36,7 +37,7 @@ questionModal.addEventListener('show.bs.modal',modalEditor)
 submitBtn.addEventListener('click', checkGuess)
 resetBtn.addEventListener('click', init)
 quitBtn.addEventListener('click', gameEnd)
-
+lightDarkBtn.addEventListener("click", toggleLightDark)
 /*-------------------------------- Functions --------------------------------*/
 
 function init(){
@@ -121,7 +122,7 @@ let answer1= questionModal.querySelector('#A1')
 let answer2= questionModal.querySelector('#A2')
 let answer3= questionModal.querySelector('#A3')
 let answer4= questionModal.querySelector('#A4')
-const arr=questionObject.answers[0]
+
 
 
 //want to randomize this
@@ -135,7 +136,7 @@ answer3.setAttribute("value", `${questionObject.answers[2]}` )
 answer4Display.textContent = `${questionObject.answers[3]}`
 answer4.setAttribute("value", `${questionObject.answers[3]}` )
 
-console.log(arr)
+
 
 
 }
@@ -218,6 +219,18 @@ checkWinner()
 quitBtn.style.visibility= "hidden"
 }
 
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+}
 
+function checkDarkPref() {
+  if (
+    window.matchMedia("(prefers-color-scheme:dark)").matches &&
+    body.className !== "dark"
+  ) {
+    toggleLightDark()
+  }
+}
+checkDarkPref()
 init()
 
