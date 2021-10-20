@@ -25,13 +25,15 @@ const player2ScoreMessage=document.querySelector("#player2")
 const questionModal= document.getElementById("questionsModal")
 const submitBtn= document.getElementById("submit")
 const timerQ= document.querySelector('#timerX')
-console.log(timerQ);
+const resetBtn=document.querySelector('.game-reset')
+console.log(resetBtn);
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 cells.forEach(cell=> cell.addEventListener('click',handleClick))
 questionModal.addEventListener('show.bs.modal',modalEditor)
 submitBtn.addEventListener('click', checkGuess)
-
+resetBtn.addEventListener('click', init)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -46,6 +48,7 @@ questionObject={}
 questionCorrect=null
 temp=null
 points=null
+cells.forEach(cell=> cell.style.visibility="visible")
 render()
 }
 
@@ -90,7 +93,7 @@ function countdown() {
 
 function timeExpired() {
   checkGuess()
-  
+  bootstrap.Modal.getInstance(questionModal).hide()
 
 
   clearTimeout(timerId);
@@ -159,6 +162,7 @@ if(check1.checked=== true){
   questionCorrect=false
 
 setScore(questionCorrect)
+clearTimeout(timerId)
 //console.log(questionCorrect, 'this is the valueof the radioButton', check2.value)
 // console.log('this is correct answer: ', questionObject.rightAnswer)
 //if(questionCorrect){console.log('yay')}
