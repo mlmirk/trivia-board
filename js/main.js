@@ -26,6 +26,7 @@ const questionModal= document.getElementById("questionsModal")
 const submitBtn= document.getElementById("submit")
 const timerQ= document.querySelector('#timerX')
 const resetBtn=document.querySelector('.game-reset')
+const quitBtn=document.querySelector('.game-end')
 const bannerMessage=document.getElementById("banner")
 console.log(resetBtn);
 
@@ -35,7 +36,7 @@ cells.forEach(cell=> cell.addEventListener('click',handleClick))
 questionModal.addEventListener('show.bs.modal',modalEditor)
 submitBtn.addEventListener('click', checkGuess)
 resetBtn.addEventListener('click', init)
-
+quitBtn.addEventListener('click', gameEnd)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -51,6 +52,7 @@ temp=null
 points=null
 turns=0
 cells.forEach(cell=> cell.style.visibility="visible")
+quitBtn.style.visibility= "visible"
 render()
 }
 
@@ -207,7 +209,11 @@ function checkWinner(){
   }
 
 }
-
+function gameEnd(){
+  cells.forEach(cell=> cell.style.visibility="hidden")
+  checkWinner()
+  quitBtn.style.visibility= "hidden"
+}
 
 
 init()
