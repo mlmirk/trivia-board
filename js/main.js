@@ -113,7 +113,6 @@ clearTimeout(timerId);
 function modalEditor(evt){
 
 let modalTitle= questionModal.querySelector('.modal-title')
-let selectQuestion= questionModal.querySelector('#question-text')
 let answer1Display= questionModal.querySelector('label[for="A1"]')
 let answer2Display= questionModal.querySelector('label[for="A2"]')
 let answer3Display= questionModal.querySelector('label[for="A3"]')
@@ -126,7 +125,7 @@ const arr=questionObject.answers[0]
 
 
 //want to randomize this
-selectQuestion.textContent = `${questionObject.question}`
+modalTitle.textContent=`${questionObject.question}`
 answer1Display.textContent= `${questionObject.answers[0]}`
 answer1.setAttribute("value", `${questionObject.answers[0]}` )
 answer2Display.textContent = `${questionObject.answers[1]}`

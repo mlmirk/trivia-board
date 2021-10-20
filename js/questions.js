@@ -1,54 +1,35 @@
-const Question0=[
-  { question:'What is the main ingredient used to make hummus',
+const Food0=[
+  { question:'What is the main ingredient used to make hummus?',
     rightAnswer:'Chickpeas',
     answers:["Tahini","Humms","Chickpeas","Navy Beans"],
+}
+,
+{ question:'Which famous soft drink was invented in 1892?',
+    rightAnswer:'Coca Cola',
+    answers:["Coca Cola","Pepsi","Surge","Fanta"],
+}
+,
+{ question:'Which is the only food that can never go off or go bad?',
+    rightAnswer:'Honey',
+    answers:["Honey","Twinkies","Peanuts","Canned Tuna"],
+}
+,
+{ question:'What popular Mexican dish literally translates as ‘little donkey’?',
+    rightAnswer:'Burrito',
+    answers:["Burrito","Enchilladas","Frijoles","Taco"],
+}
+,
+{ question:'How many herbs and spices make up the KFC spice blend?',
+    rightAnswer:'11',
+    answers:["7","9","11","15"],
+}
+,
+{ question:'What is Japanese Sake made from?',
+    rightAnswer:'Rice',
+    answers:["Rice","Barley","Wheat","Wasabi"],
+}
 
-  },
-  {question:'',
-  rightAnswer:'',
-  wrongAnswer1:'',
-  wrongAnswer2:'',
-  wrongAnswer3:'',
-  answers:[5,6,7,8],
-  isActive:true, 
-
-
-  },
-  {question:'',
-    rightAnswer:'',
-    wrongAnswer1:'',
-    wrongAnswer2:'',
-    wrongAnswer3:'',
-    isActive:true, 
-
-
-  },
-  {question:'',
-    rightAnswer:'',
-    wrongAnswer1:'',
-    wrongAnswer2:'',
-    wrongAnswer3:'',
-    isActive:true, 
-
-
-  },
-  {question:'',
-    rightAnswer:'',
-    wrongAnswer1:'',
-    wrongAnswer2:'',
-    wrongAnswer3:'',
-    isActive:true, 
-
-
-  },
-  {question:'',
-    rightAnswer:'',
-    wrongAnswer1:'',
-    wrongAnswer2:'',
-    wrongAnswer3:'',
-    isActive:true, 
-
-  }]
+  ]
 
 
   const Question1=[
@@ -324,8 +305,8 @@ const Question0=[
 // this function takes in the catagory number and the question number and return the object within the array
 function getQuestionsAndAnswers(cat,qNumber){
   if(cat === 0){
-    shuffle(Question0[qNumber].answers)
-    return Question0[qNumber]
+    shuffle(Food0[qNumber].answers)
+    return Food0[qNumber]
   }else if(cat === 1){
     return Question1[qNumber]
   }else if(cat === 2){
