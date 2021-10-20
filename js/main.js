@@ -10,12 +10,13 @@ let catagoryNum //to be passed to retrevail function
 let questionNum //to be passed to retrevail function
 let questionCorrect // value to track if question is right/wrong
 let questionActive // for the timer to use to play the time
-let timeLeft // global timer 
+let timeLeft // global time value 
 let questionObject //store the question object 
 let questionDisplay // tbd
 let randomizer // want a vavaible to randomly assign questions and answers
 let temp
 let points
+let timerId
 /*------------------------ Cached Element References ------------------------*/
 const cells = document.querySelectorAll(".cell")
 const playerMessage= document.querySelector("#message")
@@ -23,8 +24,8 @@ const player1ScoreMessage=document.querySelector("#player1")
 const player2ScoreMessage=document.querySelector("#player2")
 const questionModal= document.getElementById("questionsModal")
 const submitBtn= document.getElementById("submit")
-
-
+const timerQ= document.querySelector('#timerX')
+console.log(timerQ);
 /*----------------------------- Event Listeners -----------------------------*/
 
 cells.forEach(cell=> cell.addEventListener('click',handleClick))
@@ -41,7 +42,6 @@ player1Score=0
 player2Score=0
 winner= null
 questionActive= false
-timeLeft=30
 questionObject={}
 questionCorrect=null
 temp=null
@@ -55,24 +55,45 @@ playerMessage.innerHTML= playerTurn >0 ? "It is player 1's turn":"It is player 2
 player1ScoreMessage.innerHTML= `Player 1 Score: ${player1Score}`
 player2ScoreMessage.innerHTML= `Player 2 Score: ${player2Score}`
 
+
+
 }
 
 function handleClick(evt){
-
+timerId = setInterval(countdown, 1000);
 
 temp=evt.target.id
 catagoryNum= parseInt(evt.target.id.slice(0))
 questionNum= parseInt(evt.target.id.slice(-1))
+timeLeft=10
 questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
 modalEditor()
 //console.log(questionNum)
 // cells.setAttribute('hidden')
 evt.target.style.visibility = 'hidden'
 //questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
-questionTimer()
+
+
+
 
 
 render()
+}
+function countdown() {
+  if (timeLeft == -1) {
+    timeExpired();
+  } else {
+    timerQ.textContent= `time remaining ${timeLeft}`
+      timeLeft--;
+  }
+}
+
+function timeExpired() {
+  checkGuess()
+  
+
+
+  clearTimeout(timerId);
 }
 
 
@@ -83,15 +104,12 @@ let answer1Display= questionModal.querySelector('label[for="A1"]')
 let answer2Display= questionModal.querySelector('label[for="A2"]')
 let answer3Display= questionModal.querySelector('label[for="A3"]')
 let answer4Display= questionModal.querySelector('label[for="A4"]')
-
-
 let answer1= questionModal.querySelector('#A1')
 let answer2= questionModal.querySelector('#A2')
 let answer3= questionModal.querySelector('#A3')
 let answer4= questionModal.querySelector('#A4')
-let timerQ= questionModal.querySelector('#timer')
-//console.log(answer1)
-timerQ.textContent= `time remaining ${timeLeft}` // not truly showing countdown 
+
+ // not truly showing countdown 
 selectQuestion.textContent = `${questionObject.question}`
 
 //want to randomize this
@@ -120,13 +138,15 @@ answer4.setAttribute("value", `${questionObject.wrongAnswer3}` )
 // answer3.textContent='798'
 // answer4.textContent='564'
 }
-function checkGuess(evt){
+function checkGuess(){
 let check1= document.getElementById("A1")
 let check2= document.getElementById("A2")
 let check3= document.getElementById("A3")
 let check4= document.getElementById("A4")
 
 questionCorrect=false
+
+
 if(check1.checked=== true){
   (check1.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
 }else if(check2.checked=== true){
@@ -135,7 +155,8 @@ if(check1.checked=== true){
   (check3.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
 }else if(check4.checked=== true){
   (check4.value === questionObject.rightAnswer? questionCorrect=true : questionCorrect=false)
-}
+}else
+  questionCorrect=false
 
 setScore(questionCorrect)
 //console.log(questionCorrect, 'this is the valueof the radioButton', check2.value)
@@ -161,21 +182,12 @@ function setScore(x){
     player2Score+=points
   }
   playerTurn= playerTurn * -1
+  clearTimeout(timerId)
 render()
 }
 
-function questionTimer(){
-  let timer = setInterval(function() {
-    // Each time the function is called, decrease the remaining time by 1
-    timeLeft -= 1
-    let x=timeLeft
-    if(timeLeft === 0){
-      clearInterval(timer)
-    }
-  }, 1000)
-  timeLeft=30
-  }
+
 
 
 init()
-//questionTimer()
+
