@@ -12,11 +12,11 @@ let questionCorrect // value to track if question is right/wrong
 let questionActive // for the timer to use to play the time
 let timeLeft // global time value 
 let questionObject //store the question object 
-let questionDisplay // tbd
 let randomizer // want a vavaible to randomly assign questions and answers
 let temp
 let points
 let timerId
+let turns
 /*------------------------ Cached Element References ------------------------*/
 const cells = document.querySelectorAll(".cell")
 const playerMessage= document.querySelector("#message")
@@ -26,6 +26,7 @@ const questionModal= document.getElementById("questionsModal")
 const submitBtn= document.getElementById("submit")
 const timerQ= document.querySelector('#timerX')
 const resetBtn=document.querySelector('.game-reset')
+const bannerMessage=document.getElementById("banner")
 console.log(resetBtn);
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -48,6 +49,7 @@ questionObject={}
 questionCorrect=null
 temp=null
 points=null
+turns=0
 cells.forEach(cell=> cell.style.visibility="visible")
 render()
 }
@@ -75,6 +77,7 @@ modalEditor()
 // cells.setAttribute('hidden')
 evt.target.style.visibility = 'hidden'
 //questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
+turns+=1
 
 
 
@@ -165,6 +168,9 @@ if(check1.checked=== true){
 setScore(questionCorrect)
 clearTimeout(timerId)
 audio.pause()
+if(turns >35){
+  checkWinner()
+}
 //console.log(questionCorrect, 'this is the valueof the radioButton', check2.value)
 // console.log('this is correct answer: ', questionObject.rightAnswer)
 //if(questionCorrect){console.log('yay')}
@@ -191,7 +197,16 @@ function setScore(x){
   clearTimeout(timerId)
 render()
 }
+function checkWinner(){
+  if(player1Score>player2Score){
+    bannerMessage.innerHTML= `Player 1 wins with ${player1Score} points`
+  }else if(player2Score>player1Score){
+    bannerMessage.innerHTML= `Player 2 wins with ${player2Score} points`
+  }else if(player1Score === player2Score){
+    bannerMessage.innerHTML= `Tie Game at ${player2Score} points`
+  }
 
+}
 
 
 
