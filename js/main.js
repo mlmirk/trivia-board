@@ -77,7 +77,7 @@ timerId = setInterval(countdown, 1000);
 temp=evt.target.id
 catagoryNum= parseInt(evt.target.id.slice(0))
 questionNum= parseInt(evt.target.id.slice(-1))
-timeLeft=10
+timeLeft=15
 questionObject=getQuestionsAndAnswers(catagoryNum,questionNum)
 modalEditor()
 evt.target.style.visibility = 'hidden'

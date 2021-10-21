@@ -20,15 +20,17 @@ html {
 }
 
 body {
-  --body-bg: #8a8b9b;
+  --body-bg: #72738a;
   --btn-text-color: #2a2a2a;
-  --card-text-color: #3e3e3e;
-  --header-bg: #007bbe;
+  --darkMode-color:black;
+  
   --header-text-color: #d8d8d8;
   --inverted-btn-text-color: #eaeaea;
   --light-dark-btn-bg: #1d1e2b;
   --light-dark-btn-content: "Dark Mode";
-  background-color: rgb(193, 192, 192);
+  background: rgb(122,118,118);
+  background: radial-gradient(circle, rgba(122,118,118,1) 5%, rgba(63,75,251,1) 83%);
+  
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -45,11 +47,12 @@ body {
   "user buttons buttons faq";
 }
 body.dark {
-  --body-bg: #22232b;
+  --body-bg: rgb(122,118,118);
+  background: radial-gradient(circle, rgb(60, 58, 58) 5%, rgba(30,30,32,1) 55%);
   --btn-text-color: #eaeaea;
   --body-text-color: #dedede;
-  --header-bg: #005e9d;
-  --header-text-color: #d8d8d8;
+  
+  --darkMode-color: #d8d8d8;
   --inverted-btn-text-color: #2a2a2a;
   --light-dark-btn-bg: linear-gradient(to right top, #444655, #595b6b, #6f7181,
     #868898, #9ea0b0, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
@@ -73,27 +76,30 @@ body.dark {
     align-items: center;
     justify-self: center;
     
-    
-    }
+        }
 
 
   
 .flex-container-left{
 	display: flex;
-	align-items: left;
+	align-items: center;
 	justify-content: center;
+  flex-direction: column;
 }
 .wrapper{
   grid-area: board;
 }
 .rules{
+  color: var(--darkMode-color);
   grid-area: faq;
 }
 .gameButtons{
+  
   grid-area: buttons;
 }
 .userFeedback{
   grid-area: user;
+  color: var(--darkMode-color);
 }
 section.board {
   
@@ -113,7 +119,7 @@ section.board {
   border-radius: 10PX;
 }
 .easy{
-  background-color: green;
+  background-color: rgb(3, 77, 3);
 }
 .med{
   background-color: yellow;
@@ -137,28 +143,55 @@ background-color: red;
   content: var(--light-dark-btn-content);
 }
 
+button{
+  border-radius: 30%;
+  margin:0 20px 60px 20px ;
+  width: 75px;
+}
 
 
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1150px) {
 
   body {
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	margin: 0;
-  height: 120vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: auto;
+  
+}
+body.dark {
+  background-color: var(--body-bg);
 }
 
 .faq{
   font-size: 12px;
 }
+button{
+  margin: 10px 0 10px 0;
+  width: 75px;
+}
+section.board {
+  
+  
+  display: grid;
+  grid-template-rows: repeat(6, 6vmin);
+  grid-template-columns: repeat(6, 6vmin);
+  grid-gap: 1vmin;
 
-
+}
+.cell {
+  
+  border:  3px solid black;
+  font-size: 15vmin;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 10PX;
+}
 
 
 }

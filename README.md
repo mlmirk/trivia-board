@@ -4,6 +4,7 @@ This browser ennabled trivia game was created with the intention to be a fun, an
 
 
 ## __Starting the Game__
+Face off in a round of trivia by clicking **[here](https://vigorous-khorana-7e3a41.netlify.app)**
 Simply click a square and the game will start. You have a certain amount of time before the game will autosubmit your answer and then award points if you are right!
 
 ### Faq & Rules 
@@ -17,3 +18,9 @@ Simply click a square and the game will start. You have a certain amount of time
 5. Replay will reset the board to origianl condition 
 6. End game will check who won and clear the baord.
 7. Light an dark mode will switch the mode for users based on preferance. 
+
+
+# link to game
+# tech used/credits
+# screenshots
+# futre stuff
