@@ -53,6 +53,7 @@ points=null
 turns=0
 cells.forEach(cell=> cell.style.visibility="visible")
 quitBtn.style.visibility= "visible"
+bannerMessage.innerHTML='Trivia Duos'
 render()
 
 }

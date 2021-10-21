@@ -51,7 +51,10 @@ body.dark {
   background-color: var(--body-bg);
 }
 
+p.dark{
+  --body-text-color: #dedede;
 
+}
 
 
 
