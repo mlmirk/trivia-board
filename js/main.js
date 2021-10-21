@@ -1,7 +1,9 @@
 /*-------------------------------- Constants --------------------------------*/
+
 import{getQuestionsAndAnswers} from "./questions.js"
 const audio= new Audio('../audio/HumanMusic.mp3')
 /*---------------------------- Variables (state) ----------------------------*/
+
 let playerTurn
 let player1Score
 let player2Score
@@ -17,6 +19,7 @@ let points
 let timerId
 let turns
 /*------------------------ Cached Element References ------------------------*/
+
 const cells = document.querySelectorAll(".cell")
 const playerMessage= document.querySelector("#message")
 const player1ScoreMessage=document.querySelector("#player1")
@@ -42,6 +45,7 @@ lightDarkBtn.addEventListener("click", toggleLightDark)
 
 function init(){
 
+checkDarkPref()
 playerTurn = 1
 player1Score=0
 player2Score=0
@@ -124,9 +128,6 @@ let answer2= questionModal.querySelector('#A2')
 let answer3= questionModal.querySelector('#A3')
 let answer4= questionModal.querySelector('#A4')
 
-
-
-//want to randomize this
 modalTitle.textContent=`${questionObject.question}`
 answer1Display.textContent= `${questionObject.answers[0]}`
 answer1.setAttribute("value", `${questionObject.answers[0]}` )
@@ -136,9 +137,6 @@ answer3Display.textContent = `${questionObject.answers[2]}`
 answer3.setAttribute("value", `${questionObject.answers[2]}` )
 answer4Display.textContent = `${questionObject.answers[3]}`
 answer4.setAttribute("value", `${questionObject.answers[3]}` )
-
-
-
 
 }
 
@@ -182,8 +180,9 @@ function setScore(x){
     points=300
   }else if(document.getElementById(`${temp}`).classList.contains("hard") && x===true){
     points=500
-  }else
+  }else{
     points=0
+  }
 
   if(playerTurn===1){
     player1Score+=points
@@ -218,20 +217,25 @@ function gameEnd(){
 cells.forEach(cell=> cell.style.visibility="hidden")
 checkWinner()
 quitBtn.style.visibility= "hidden"
+
 }
 
 function toggleLightDark() {
+
   body.className = body.className === "dark" ? "" : "dark"
+
 }
 
 function checkDarkPref() {
+
   if (
     window.matchMedia("(prefers-color-scheme:dark)").matches &&
     body.className !== "dark"
   ) {
     toggleLightDark()
   }
+
 }
-checkDarkPref()
+
 init()
 
