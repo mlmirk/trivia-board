@@ -13,12 +13,14 @@
 	<title>Trivia</title>
 </head>
 <body>
-	<div class="userFeedback">
+	
+	<div class="userFeedback flex-container-input">
 	<h1 id="banner">Trivia Duos!!!</h1>
 	<h2 id="message">Message</h2>
 	<h3 id="player1">Player 1 Score:</h3>
 	<h3 id="player2">Player 2 Score:</h3>
 </div>
+<div class="wrapper flex-container">
 	<section class="board">
 		<div id="0sq0" class="cell easy" data-bs-toggle="modal" data-bs-target="#questionsModal" ></div>
 		<div id="0sq1" class="cell easy" data-bs-toggle="modal" data-bs-target="#questionsModal"></div>
@@ -57,9 +59,14 @@
     <div id="5sq4" class="cell easy"  data-bs-toggle="modal" data-bs-target="#questionsModal"></div>
     <div id="5sq5" class="cell easy"  data-bs-toggle="modal" data-bs-target="#questionsModal"></div>
 	</section>   
+</div>
+	<div class="gameButtons flex-container-bottom">
+		<button class="game-reset btn btn-info" >Replay</button>
+		<button class="game-end btn btn-danger" >END GAME</button>
+		<button id="light-dark-button" class="btn"></button>
+	</div>
 
-
-<div id="gameRules" class="rules">
+<div id="gameRules" class="rules flex-container-left">
 <p>
 	<ul class="faq"><h3>Rules and FAQ</h3>
 		<li>Click a box to start he game</li>
@@ -81,11 +88,7 @@
 </p>
 </div>
 
-<div class="gameButtons">
-	<button class="game-reset btn btn-info" >Replay</button>
-	<button class="game-end btn btn-danger" >END GAME</button>
-	<button id="light-dark-button" class="btn"></button>
-</div>
+
 
 
 

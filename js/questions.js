@@ -33,66 +33,66 @@ const Food0=[
 
 
   const States1=[
-    { question:'What is the main ingredient used to make hummus?',
-      rightAnswer:'Chickpeas',
-      answers:["Tahini","Humms","Chickpeas","Navy Beans"],
+    { question:'What is the capital of Washington state?',
+      rightAnswer:'Olympia',
+      answers:["Olympia","Seattle","Tacoma","Renton"],
   }
   ,
-  { question:'Which famous soft drink was invented in 1892?',
-      rightAnswer:'Coca Cola',
-      answers:["Coca Cola","Pepsi","Surge","Fanta"],
+  { question:'What is the only state flag that is two-sided?',
+      rightAnswer:'Oregon',
+      answers:["Oregon","Texas","New Jersey","North Dakota"],
   }
   ,
-  { question:'Which is the only food that can never go off or go bad?',
-      rightAnswer:'Honey',
-      answers:["Honey","Twinkies","Peanuts","Canned Tuna"],
+  { question:'Which state is known as the “granite state”?',
+      rightAnswer:'New Hampshire',
+      answers:["New Hampshire","Montana","Oklohoma","Wisconsin"],
   }
   ,
-  { question:'What popular Mexican dish literally translates as ‘little donkey’?',
-      rightAnswer:'Burrito',
-      answers:["Burrito","Enchilladas","Frijoles","Taco"],
+  { question:'Which U.S. state is nicknamed both the “Constitution State” and the “Nutmeg State”?',
+      rightAnswer:'Connecticut',
+      answers:["Connecticut","Massachesets","Delaware","Vermont"],
   }
   ,
-  { question:'How many herbs and spices make up the KFC spice blend?',
-      rightAnswer:'11',
-      answers:["7","9","11","15"],
+  { question:'What state has the longest freshwater shoreline?',
+      rightAnswer:'Michigan',
+      answers:["Michigan","Florida","Maine","Minnisota"],
   }
   ,
-  { question:'What is Japanese Sake made from?',
-      rightAnswer:'Rice',
-      answers:["Rice","Barley","Wheat","Wasabi"],
+  { question:'What is the biggest US state in terms of land area?',
+      rightAnswer:'Alaska',
+      answers:["Alaska","Texas","Ohio","Canada"],
   }
   
     ]
     const Potter2=[
-      { question:'What is the main ingredient used to make hummus?',
-        rightAnswer:'Chickpeas',
-        answers:["Tahini","Humms","Chickpeas","Navy Beans"],
+      { question:'Who won the quidditch world cup in Goblet of Fire?',
+        rightAnswer:'Bulgaria',
+        answers:["Gryffindor","Ireland","Bulgaria","Chuddley Cannons"],
     }
     ,
-    { question:'Which famous soft drink was invented in 1892?',
-        rightAnswer:'Coca Cola',
-        answers:["Coca Cola","Pepsi","Surge","Fanta"],
+    { question:'What magical item contains white and red smoke and reacts to a user if they forget something',
+        rightAnswer:'Remembrall',
+        answers:["Remembrall","Forget-me-not","Snitch","Pensieve"],
     }
     ,
-    { question:'Which is the only food that can never go off or go bad?',
-        rightAnswer:'Honey',
-        answers:["Honey","Twinkies","Peanuts","Canned Tuna"],
+    { question:'What are the names of the three Peverell brothers?',
+        rightAnswer:'Antioch, Cadmus and Ignotus',
+        answers:["Antioch, Cadmus and Ignotus","Remus, Sirius and James","Alastor, Romulus and Wulfric","Asmodayis, Sybil and Nymphadora"],
     }
     ,
-    { question:'What popular Mexican dish literally translates as ‘little donkey’?',
-        rightAnswer:'Burrito',
-        answers:["Burrito","Enchilladas","Frijoles","Taco"],
+    { question:'How much does a ticket on the Knight Bus cost if it includes hot chocolate?',
+        rightAnswer:'14 Sickles',
+        answers:["14 Sickles","10 Sickles, 3 Knuts","1 Galleon","7 Sickles"],
     }
     ,
-    { question:'How many herbs and spices make up the KFC spice blend?',
-        rightAnswer:'11',
-        answers:["7","9","11","15"],
+    { question:'What is Rita Skeeter’s animagus form?',
+        rightAnswer:'A beetle',
+        answers:["A beetle","A Bumblebee","A cat","A mouse"],
     }
     ,
-    { question:'What is Japanese Sake made from?',
-        rightAnswer:'Rice',
-        answers:["Rice","Barley","Wheat","Wasabi"],
+    { question:'Who is the Slytherin house ghost?',
+        rightAnswer:'Bloody Baron',
+        answers:["Bloody Baron","Peeves","Nearly-Headless Nick","They Grey Lady"],
     }
     
       ]
