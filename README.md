@@ -1,4 +1,5 @@
-# Trivia Duos 
+# Tag Team Trivia
+
 ## __Game overview__
 ---
 This browser enabled trivia game was created with the intention to be a fun, and easy to you head to head trivia game. 
