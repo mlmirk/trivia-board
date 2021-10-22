@@ -30,11 +30,11 @@ Simply click a square and the game will start. You have a certain amount of time
 
 
 # screenshots
-![alt text](image.jpg)
-![alt text](image.jpg)
-![alt text](image.jpg)
-![alt text](image.jpg)
-<img alt="Screen Shot 2021-10-22 at 9 28 22 AM" src="https://user-images.githubusercontent.com/51840257/138463430-dc30af81-91d3-434a-a652-483f8afa6fac.png">
+
+<img alt="Dark Mode mobile" src="https://user-images.githubusercontent.com/51840257/138463430-dc30af81-91d3-434a-a652-483f8afa6fac.png">
+<img width="258" alt="Light Mode mobile" src="https://user-images.githubusercontent.com/51840257/138463804-42320df5-bcdb-4f5a-b636-1f7f4cc3c59f.png">
+<img width="507" alt="Modal" src="https://user-images.githubusercontent.com/51840257/138463913-63861acd-473a-4735-9bbe-e0468615d888.png">
+<img width="1365" alt="Full screen" src="https://user-images.githubusercontent.com/51840257/138464072-36365df3-cd35-42bc-a60a-dfbf60a08816.png">
 
 
 ## Future Enhancements/ Next Steps
