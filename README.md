@@ -30,7 +30,9 @@ Simply click a square and the game will start. You have a certain amount of time
 
 
 # screenshots
-
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
 
 
 ## Future Enhancements/ Next Steps
