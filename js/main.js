@@ -57,7 +57,7 @@ points=null
 turns=0
 cells.forEach(cell=> cell.style.visibility="visible")
 quitBtn.style.visibility= "visible"
-bannerMessage.innerHTML='Tag TeaM Trivia'
+bannerMessage.innerHTML='Tag Team Trivia'
 render()
 
 }
