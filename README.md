@@ -33,6 +33,8 @@ Simply click a square and the game will start. You have a certain amount of time
 ![alt text](image.jpg)
 ![alt text](image.jpg)
 ![alt text](image.jpg)
+![alt text](image.jpg)
+<img alt="Screen Shot 2021-10-22 at 9 28 22 AM" src="https://user-images.githubusercontent.com/51840257/138463430-dc30af81-91d3-434a-a652-483f8afa6fac.png">
 
 
 ## Future Enhancements/ Next Steps
