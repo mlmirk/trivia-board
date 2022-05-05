@@ -97,7 +97,7 @@ function countdown() {
   if (timeLeft == -1) {
     timeExpired();
   } else {
-    audio.play()
+    //audio.play()
     timerQ.textContent= `time remaining ${timeLeft}`
     timeLeft--;
   }
